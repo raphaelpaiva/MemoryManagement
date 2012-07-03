@@ -1,19 +1,30 @@
 package br.ufrj.dcc.so.memory;
 
 public class Frame {
-	private Page page;
+	private boolean isFree;
+	private int startAdress;
 
-	public Frame(Page page) {
+	public Frame(int startAdress) {
 		super();
-		this.page = page;
+		this.isFree = true;
+		this.startAdress = startAdress;
 	}
 
-	public Page getPage() {
-		return page;
+	public boolean isFree() {
+		return isFree;
 	}
 
-	public void setPage(Page page) {
-		this.page = page;
+	public void setFree(boolean isFree) {
+		this.isFree = isFree;
 	}
-	
+
+	public int getStartAdress() {
+		return startAdress;
+	}
+
+	@Override
+	public String toString() {
+		return "Frame [startAdress=" + startAdress + "]";
+	}
+
 }

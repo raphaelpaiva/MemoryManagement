@@ -15,12 +15,12 @@ public class Thread extends java.lang.Thread {
 		this.maxPages = maxPages;
 		
 		manager.alloc(this);
-		System.out.println(">>> Created thread " + this);
+		System.out.println("Created " + this);
 	}
 	
 	@Override
 	public void run() {
-		System.out.println(">>> Running thread " + this);
+		System.out.println("Running " + this);
 		while(true) {
 			try {
 				int pageNum = generateRandomPageNumber();
@@ -37,5 +37,10 @@ public class Thread extends java.lang.Thread {
 		Random random = new Random();
 		
 		return random.nextInt(maxPages);
+	}
+	
+	@Override
+	public String toString() {
+		return "Thread[" + getId() + "]";
 	}
 }
