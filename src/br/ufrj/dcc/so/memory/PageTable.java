@@ -43,10 +43,21 @@ public class PageTable {
 	@Override
 	public String toString() {
 		StringBuffer sb = new StringBuffer();
+		sb.append("+--------+--------+\n");
+		sb.append("+--Page--+--Addr--+\n");
+		sb.append("+--------+--------+\n");
 		
-		sb.append("+--------+--------+--------+\n");
-		sb.append("+--Page--+--Addr--+Physical+\n");
-		sb.append("+--------+--------+--------+\n");
+		for (int i = 0; i < entry.length; i++) {
+			if (entry[i] == null) {
+				continue;
+			} else {
+				String formattedPageNum = String.format("%02d", i);
+				String formattedAddr = String.format("%02d", entry[i].getNumber());
+				sb.append("+---" + formattedPageNum + "---");
+				sb.append("+---" + formattedAddr + "---");
+				sb.append("+\n");
+			}
+		}
 		
 		return sb.toString();
 	}
