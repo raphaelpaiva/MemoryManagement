@@ -46,7 +46,8 @@ public class Manager {
 		} else {
 			updateUsage(thread, pageNum, queue);
 		}
-
+		System.out.println(thread + " Page Table:");
+		System.out.println(pageTable);
 	}
 
 	private void updateUsage(Thread thread, int pageNum, Queue<Integer> queue) {

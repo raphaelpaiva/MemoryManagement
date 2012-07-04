@@ -2,12 +2,12 @@ package br.ufrj.dcc.so.memory;
 
 public class Frame {
 	private boolean isFree;
-	private int startAdress;
+	private int number;
 
 	public Frame(int startAdress) {
 		super();
 		this.isFree = true;
-		this.startAdress = startAdress;
+		this.number = startAdress;
 	}
 
 	public boolean isFree() {
@@ -18,13 +18,13 @@ public class Frame {
 		this.isFree = isFree;
 	}
 
-	public int getStartAdress() {
-		return startAdress;
+	public int getNumber() {
+		return number;
 	}
 
 	@Override
 	public String toString() {
-		return "Frame [startAdress=" + startAdress + "]";
+		return "Frame [number=" + number + "]";
 	}
 
 }
